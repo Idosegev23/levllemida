@@ -39,10 +39,11 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="aspect-square max-w-md mx-auto overflow-hidden rounded-xl shadow-sm bg-white">
-              {/* כאן יש להחליף בתמונה אמיתית */}
-              <div className="h-full w-full flex items-center justify-center bg-light-pink bg-opacity-10">
-                <span className="text-primary text-xl font-medium">תמונה מקצועית</span>
-              </div>
+              <img
+                src="/ilanit.png"
+                alt="אילנית - מורה מקצועית"
+                className="h-full w-full object-cover object-center"
+              />
             </div>
           </motion.div>
           
