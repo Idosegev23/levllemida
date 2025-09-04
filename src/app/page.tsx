@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import TeachingMethodsSection from '@/components/TeachingMethodsSection';
+import ParallaxHeroSection from '@/components/ParallaxHeroSection';
+import ParallaxAboutSection from '@/components/ParallaxAboutSection';
+import ParallaxTeachingSection from '@/components/ParallaxTeachingSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
@@ -18,9 +18,9 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <TeachingMethodsSection />
+        <ParallaxHeroSection />
+        <ParallaxAboutSection />
+        <ParallaxTeachingSection />
         <TestimonialsSection />
         <FaqSection />
         <ContactSection />
