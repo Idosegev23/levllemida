@@ -43,19 +43,19 @@ const ParallaxAboutSection = () => {
   ];
 
   return (
-    <section ref={ref} id="עליי" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <section ref={ref} id="עליי" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-50 via-pink-50/30 to-yellow-50/20">
       {/* רקע פארלקס דינמי */}
       <Parallax speed={-20} className="absolute inset-0">
-        <div className="w-full h-[120%] bg-gradient-to-br from-primary/10 via-transparent to-highlight-yellow/5" />
+        <div className="w-full h-[120%] bg-gradient-to-br from-primary/5 via-transparent to-highlight-yellow/3" />
       </Parallax>
 
       {/* אלמנטים דקורטיביים מרחפים */}
       <Parallax speed={-30} className="absolute top-1/4 left-0">
         <motion.div
-          className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-transparent blur-3xl"
+          className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/8 to-transparent blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
             duration: 8,
@@ -67,10 +67,10 @@ const ParallaxAboutSection = () => {
 
       <Parallax speed={-25} className="absolute bottom-1/4 right-0">
         <motion.div
-          className="w-48 h-48 rounded-full bg-gradient-to-tl from-highlight-yellow/20 to-transparent blur-2xl"
+          className="w-48 h-48 rounded-full bg-gradient-to-tl from-highlight-yellow/10 to-transparent blur-2xl"
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.2, 0.5, 0.2],
+            opacity: [0.15, 0.3, 0.15],
           }}
           transition={{
             duration: 10,
@@ -83,7 +83,7 @@ const ParallaxAboutSection = () => {
 
       <div className="container-center relative z-10 py-24">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-white"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 text-slate-700"
           style={{ y, opacity }}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -92,7 +92,7 @@ const ParallaxAboutSection = () => {
           <span className="relative">
             קצת עליי
             <motion.div
-              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full"
               initial={{ width: 0 }}
               animate={isInView ? { width: 200 } : {}}
               transition={{ duration: 1.5, delay: 0.5 }}
@@ -187,7 +187,7 @@ const ParallaxAboutSection = () => {
                 </motion.h3>
                 
                 <motion.div 
-                  className="mb-10 text-lg leading-relaxed text-white/90 relative space-y-6"
+                  className="mb-10 text-lg leading-relaxed text-slate-600 relative space-y-6"
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : {}}
                   transition={{ duration: 1, delay: 1 }}
@@ -212,7 +212,7 @@ const ParallaxAboutSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 1.6 }}
-                    className="font-semibold text-highlight-yellow"
+                    className="font-semibold text-primary"
                   >
                     החזון שלי הוא לייצר שינוי בתפיסת הלמידה: להפוך אותה לחוויה הוליסטית, חכמה, רגשית ומעצימה.
                   </motion.p>
@@ -249,9 +249,9 @@ const ParallaxAboutSection = () => {
                       </motion.div>
                       
                       <motion.span 
-                        className="text-white/90 text-lg font-medium"
+                        className="text-slate-600 text-lg font-medium"
                         animate={{ 
-                          color: hoveredIndex === index ? "#F2CD5E" : "rgba(255,255,255,0.9)",
+                          color: hoveredIndex === index ? "#F2A2CE" : "rgb(71 85 105)",
                         }}
                         transition={{ duration: 0.3 }}
                       >

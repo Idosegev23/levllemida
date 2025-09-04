@@ -33,25 +33,25 @@ const ParallaxHeroSection = () => {
 
   return (
     <section className="h-screen relative overflow-hidden">
-      {/* רקע פארלקס מרובה שכבות */}
+      {/* רקע פארלקס מרובה שכבות - גוונים רכים */}
       <motion.div 
         className="absolute inset-0 -z-50"
         style={{ y: yBg2, scale }}
       >
-        <div className="w-full h-[120%] bg-gradient-to-br from-purple-900 via-pink-800 to-indigo-900" />
+        <div className="w-full h-[120%] bg-gradient-to-br from-slate-100 via-pink-50 to-yellow-50" />
       </motion.div>
 
       <motion.div 
         className="absolute inset-0 -z-40"
         style={{ y: yBg1 }}
       >
-        <div className="w-full h-[110%] bg-gradient-to-tr from-transparent via-primary/20 to-highlight-yellow/30" />
+        <div className="w-full h-[110%] bg-gradient-to-tr from-transparent via-primary/10 to-highlight-yellow/15" />
       </motion.div>
 
-      {/* אלמנטים גרפיים מרחפים */}
+      {/* אלמנטים גרפיים מרחפים - גוונים עדינים */}
       <Parallax speed={-30} className="absolute top-10 left-10">
         <motion.div
-          className="w-32 h-32 rounded-full bg-gradient-to-br from-highlight-yellow/30 to-primary/20 blur-xl"
+          className="w-32 h-32 rounded-full bg-gradient-to-br from-highlight-yellow/15 to-primary/10 blur-xl"
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
@@ -70,7 +70,7 @@ const ParallaxHeroSection = () => {
 
       <Parallax speed={-20} className="absolute top-32 right-20">
         <motion.div
-          className="w-24 h-24 rounded-full bg-gradient-to-tl from-primary/40 to-soft-pink/20 blur-lg"
+          className="w-24 h-24 rounded-full bg-gradient-to-tl from-primary/20 to-soft-pink/10 blur-lg"
           animate={{
             scale: [1, 1.3, 1],
             rotate: [360, 180, 0],
@@ -89,10 +89,10 @@ const ParallaxHeroSection = () => {
 
       <Parallax speed={-40} className="absolute bottom-20 left-1/4">
         <motion.div
-          className="w-40 h-40 rounded-full bg-gradient-to-br from-light-pink/25 to-highlight-yellow/15 blur-2xl"
+          className="w-40 h-40 rounded-full bg-gradient-to-br from-light-pink/12 to-highlight-yellow/8 blur-2xl"
           animate={{
             scale: [1, 1.1, 1],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
             duration: 8,
@@ -120,14 +120,14 @@ const ParallaxHeroSection = () => {
           >
             {/* כותרת מרהיבה */}
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-700 leading-tight"
               style={{
                 x: mousePosition.x * 0.1,
                 y: mousePosition.y * 0.1,
               }}
             >
               <motion.span 
-                className="inline-block bg-gradient-to-r from-highlight-yellow via-primary to-soft-pink bg-clip-text text-transparent"
+                className="inline-block bg-gradient-to-r from-primary via-soft-pink to-highlight-yellow bg-clip-text text-transparent"
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
@@ -144,7 +144,7 @@ const ParallaxHeroSection = () => {
               </motion.span>
               <br />
               <motion.span 
-                className="text-white drop-shadow-2xl"
+                className="text-slate-600 drop-shadow-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1 }}
@@ -155,7 +155,7 @@ const ParallaxHeroSection = () => {
 
             {/* תיאור עם אפקט כתיבה */}
             <motion.p
-              className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed drop-shadow-lg"
+              className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed drop-shadow-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
@@ -179,9 +179,9 @@ const ParallaxHeroSection = () => {
             >
               <Link href="#צור-קשר">
                 <motion.button 
-                  className="relative px-12 py-4 text-xl font-bold text-white bg-gradient-to-r from-primary to-highlight-yellow rounded-2xl shadow-2xl overflow-hidden group"
+                  className="relative px-12 py-4 text-xl font-bold text-white bg-gradient-to-r from-primary/80 to-highlight-yellow/80 rounded-2xl shadow-lg overflow-hidden group"
                   whileHover={{
-                    boxShadow: "0 20px 40px rgba(242, 162, 206, 0.4)",
+                    boxShadow: "0 15px 30px rgba(242, 162, 206, 0.3)",
                   }}
                   style={{
                     x: mousePosition.x * 0.03,
@@ -192,7 +192,7 @@ const ParallaxHeroSection = () => {
                   
                   {/* אפקט ברק */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                     initial={{ x: "-100%" }}
                     whileHover={{ x: "100%" }}
                     transition={{ duration: 0.6 }}
@@ -200,7 +200,7 @@ const ParallaxHeroSection = () => {
                   
                   {/* אפקט זוהר */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary/50 to-highlight-yellow/50 opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 bg-gradient-to-r from-primary/30 to-highlight-yellow/30 opacity-0 group-hover:opacity-100"
                     transition={{ duration: 0.3 }}
                   />
                 </motion.button>

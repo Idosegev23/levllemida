@@ -41,7 +41,7 @@ const ParallaxMethodCard = ({ icon, title, description, delay, index, gradient, 
     >
       {/* כרטיס עם אפקטי עומק */}
       <motion.div
-        className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl overflow-hidden"
+        className="relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 border border-gray-200/50 shadow-lg overflow-hidden"
         whileHover={{ 
           y: -20, 
           rotateY: 5,
@@ -52,13 +52,13 @@ const ParallaxMethodCard = ({ icon, title, description, delay, index, gradient, 
         {/* רקע מדרג דינמי */}
         <motion.div
           className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0`}
-          animate={{ opacity: isHovered ? 0.1 : 0 }}
+          animate={{ opacity: isHovered ? 0.15 : 0 }}
           transition={{ duration: 0.5 }}
         />
 
         {/* אלמנטים מרחפים ברקע */}
         <motion.div
-          className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-white/20 to-transparent rounded-full blur-xl"
+          className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-gray-100/30 to-transparent rounded-full blur-xl"
           animate={{
             scale: isHovered ? [1, 1.5, 1] : 1,
             rotate: isHovered ? 360 : 0,
@@ -68,7 +68,7 @@ const ParallaxMethodCard = ({ icon, title, description, delay, index, gradient, 
 
         {/* אייקון מרכזי */}
         <motion.div 
-          className={`relative z-10 mb-8 p-6 rounded-2xl bg-gradient-to-br ${gradient} text-white inline-block shadow-xl`}
+          className={`relative z-10 mb-8 p-6 rounded-2xl bg-gradient-to-br ${gradient} text-slate-600 inline-block shadow-md`}
           whileHover={{ 
             rotate: [0, -10, 10, 0],
             scale: 1.2,
@@ -91,15 +91,15 @@ const ParallaxMethodCard = ({ icon, title, description, delay, index, gradient, 
         {/* תוכן */}
         <div className="relative z-10">
           <motion.h3 
-            className="text-2xl font-bold mb-6 text-white"
-            animate={isHovered ? { y: -5, color: "#F2CD5E" } : { y: 0, color: "#FFFFFF" }}
+            className="text-2xl font-bold mb-6 text-slate-700"
+            animate={isHovered ? { y: -5, color: "#F2A2CE" } : { y: 0, color: "rgb(51 65 85)" }}
             transition={{ type: "spring", stiffness: 300 }}
           >
             {title}
           </motion.h3>
           
           <motion.p 
-            className="text-white/80 leading-relaxed text-lg"
+            className="text-slate-600 leading-relaxed text-lg"
             animate={isHovered ? { y: -5 } : { y: 0 }}
             transition={{ type: "spring", stiffness: 300, delay: 0.05 }}
           >
@@ -167,57 +167,57 @@ const ParallaxTeachingSection = () => {
       icon: <HiOutlineLightBulb className="w-10 h-10" />,
       title: 'הוראה מתקנת',
       description: 'עבודה מקצועית וממוקדת על פערים, תוך שימוש באסטרטגיות מוכחות להוראה מותאמת.',
-      gradient: 'from-yellow-400 to-orange-500'
+      gradient: 'from-yellow-200 to-orange-200'
     },
     {
       icon: <HiOutlineChip className="w-10 h-10" />,
       title: 'AI וטכנולוגיה',
       description: 'שימוש בכלים מבוססי בינה מלאכותית להתאמה חכמה של תכנים ותרגולים.',
-      gradient: 'from-blue-400 to-purple-600'
+      gradient: 'from-blue-200 to-purple-200'
     },
     {
       icon: <HiOutlineHeart className="w-10 h-10" />,
       title: 'גישה רגשית',
       description: 'יצירת מרחב בטוח ללמידה, מחזקת ביטחון עצמי ומעודדת גישה חיובית.',
-      gradient: 'from-pink-400 to-red-500'
+      gradient: 'from-pink-200 to-rose-200'
     },
     {
       icon: <HiOutlineChartBar className="w-10 h-10" />,
       title: 'התאמה אישית',
       description: 'זיהוי סגנון הלמידה האישי והתאמת שיטות הוראה בהתאם.',
-      gradient: 'from-green-400 to-blue-500'
+      gradient: 'from-green-200 to-blue-200'
     },
     {
       icon: <HiOutlinePuzzle className="w-10 h-10" />,
       title: 'למידה חווייתית',
       description: 'משחקים ופעילויות יצירתיות שמפגישים עם החומר בצורה מהנה.',
-      gradient: 'from-purple-400 to-pink-500'
+      gradient: 'from-purple-200 to-pink-200'
     },
     {
       icon: <HiOutlineGlobeAlt className="w-10 h-10" />,
       title: 'מרתונים באנגלית',
       description: 'שיעורים אינטנסיביים לשיפור שטף הקריאה והבנת הנשמע.',
-      gradient: 'from-indigo-400 to-cyan-500'
+      gradient: 'from-indigo-200 to-cyan-200'
     },
   ];
 
   return (
-    <section ref={ref} id="שיטות-לימוד" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
+    <section ref={ref} id="שיטות-לימוד" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-50 via-slate-50 to-stone-50">
       {/* רקע פארלקס מרובה שכבות */}
       <motion.div 
         className="absolute inset-0 -z-10"
         style={{ y: backgroundY }}
       >
-        <div className="w-full h-[120%] bg-gradient-to-br from-primary/20 via-transparent to-highlight-yellow/10" />
+        <div className="w-full h-[120%] bg-gradient-to-br from-primary/8 via-transparent to-highlight-yellow/5" />
       </motion.div>
 
       {/* אלמנטים דקורטיביים גדולים */}
       <Parallax speed={-30} className="absolute top-0 left-0">
         <motion.div
-          className="w-96 h-96 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-3xl"
+          className="w-96 h-96 rounded-full bg-gradient-to-br from-primary/5 to-transparent blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
             duration: 12,
@@ -229,10 +229,10 @@ const ParallaxTeachingSection = () => {
 
       <Parallax speed={-20} className="absolute bottom-0 right-0">
         <motion.div
-          className="w-80 h-80 rounded-full bg-gradient-to-tl from-highlight-yellow/15 to-transparent blur-2xl"
+          className="w-80 h-80 rounded-full bg-gradient-to-tl from-highlight-yellow/8 to-transparent blur-2xl"
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.2, 0.5, 0.2],
+            opacity: [0.15, 0.3, 0.15],
           }}
           transition={{
             duration: 15,
@@ -245,18 +245,18 @@ const ParallaxTeachingSection = () => {
 
       <div className="container-center relative z-10 py-24">
         <motion.h2 
-          className="text-5xl md:text-6xl font-bold text-center mb-20 text-white"
+          className="text-5xl md:text-6xl font-bold text-center mb-20 text-slate-700"
           style={{ y: titleY }}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <span className="relative">
-            <span className="bg-gradient-to-r from-highlight-yellow via-primary to-soft-pink bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-soft-pink to-highlight-yellow bg-clip-text text-transparent">
               שיטות הלימוד שלי
             </span>
             <motion.div
-              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 h-2 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full"
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 h-2 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full"
               initial={{ width: 0 }}
               animate={isInView ? { width: 300 } : {}}
               transition={{ duration: 1.5, delay: 0.8 }}
