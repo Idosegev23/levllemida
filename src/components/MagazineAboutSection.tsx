@@ -9,7 +9,7 @@ const MagazineAboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} id="עליי" className="py-12 sm:py-16 lg:py-20 bg-slate-50">
+    <section ref={ref} id="עליי" className="py-12 sm:py-16 lg:py-20 bg-neutral">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Layout מגזין - גריד לא סימטרי */}

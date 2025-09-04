@@ -8,11 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#F2A2CE',
-        'light-pink': '#F2BBD9',
-        'soft-pink': '#FEC4DF',
-        'highlight-yellow': '#F2CD5E',
-        'text-black': '#0D0D0D',
+        primary: '#2D3648',        // כחול-אפור כהה ומקצועי
+        secondary: '#4A5D6B',      // אפור כחלחל
+        accent: '#7C9885',         // ירוק חכם ועדין
+        warm: '#A67C5A',           // חום עדין
+        neutral: '#F8F9FA',        // לבן חם
+        'text-dark': '#1A1D23',    // שחור רך
+        'text-light': '#6B7280',   // אפור בינוני
+        // שמירה על תאימות עם קוד קיים
+        'light-pink': '#E5E7EB',   // אפור בהיר
+        'soft-pink': '#F3F4F6',    // אפור בהיר מאוד
+        'highlight-yellow': '#A67C5A', // חום במקום צהוב
+        'text-black': '#1A1D23',
       },
       fontFamily: {
         heebo: ['Heebo', 'sans-serif'],
