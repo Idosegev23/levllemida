@@ -9,19 +9,19 @@ const MagazineAboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} id="עליי" className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section ref={ref} id="עליי" className="py-12 sm:py-16 lg:py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Layout מגזין - גריד לא סימטרי */}
-        <div className="grid grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
           {/* עמודה ראשונה - תמונה גדולה */}
-          <div className="col-span-12 lg:col-span-5">
+          <div className="col-span-12 lg:col-span-5 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8 }}
-              className="relative h-[600px] rounded-[40px] overflow-hidden bg-white shadow-lg"
+              className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-[20px] sm:rounded-[30px] lg:rounded-[40px] overflow-hidden bg-white shadow-lg"
             >
               <Image
                 src="/ilanit.png"
@@ -32,12 +32,12 @@ const MagazineAboutSection = () => {
               />
               
               {/* טקסט על התמונה */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 bg-gradient-to-t from-black/60 to-transparent">
                 <motion.h3
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.5, duration: 0.6 }}
-                  className="text-white text-2xl font-bold"
+                  className="text-white text-lg sm:text-xl lg:text-2xl font-bold"
                 >
                   אילנית מייסדת &quot;לב ללמידה&quot;
                 </motion.h3>
@@ -46,7 +46,7 @@ const MagazineAboutSection = () => {
           </div>
 
           {/* עמודה שנייה - תוכן */}
-          <div className="col-span-12 lg:col-span-7 space-y-8">
+          <div className="col-span-12 lg:col-span-7 space-y-6 sm:space-y-8 order-1 lg:order-2">
             
             {/* כותרת עם מספר */}
             <motion.div
@@ -55,11 +55,11 @@ const MagazineAboutSection = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="text-[120px] font-black text-primary/10 absolute -top-16 -left-4">02</div>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-800 relative z-10">
+              <div className="text-[80px] sm:text-[100px] lg:text-[120px] font-black text-primary/10 absolute -top-10 sm:-top-12 lg:-top-16 -left-2 sm:-left-3 lg:-left-4">02</div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-800 relative z-10">
                 קצת עליי
               </h2>
-              <div className="w-16 h-1 bg-primary rounded-full mt-4"></div>
+              <div className="w-12 sm:w-14 lg:w-16 h-1 bg-primary rounded-full mt-3 sm:mt-4"></div>
             </motion.div>
 
             {/* תוכן מגזין - בלוקים */}
@@ -137,7 +137,7 @@ const MagazineAboutSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
             >
               {[
                 { text: "הוראה מתקנת", color: "bg-red-50 border-red-100" },

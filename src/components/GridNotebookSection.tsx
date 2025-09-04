@@ -69,7 +69,7 @@ const GridNotebookSection = () => {
   ];
 
   return (
-    <section ref={ref} id="שיטות-לימוד" className="py-20 bg-blue-50 relative">
+    <section ref={ref} id="שיטות-לימוד" className="py-12 sm:py-16 lg:py-20 bg-blue-50 relative">
       
       {/* רקע דף מחברת עם משבצות */}
       <div className="absolute inset-0">
@@ -77,29 +77,29 @@ const GridNotebookSection = () => {
           {/* גריד משבצות כחולות דהויות */}
           <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgb(59, 130, 246)" strokeWidth="0.5"/>
+              <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse" className="sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px]">
+                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgb(59, 130, 246)" strokeWidth="0.5" className="sm:d-[M 35 0 L 0 0 0 35] lg:d-[M 40 0 L 0 0 0 40]"/>
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
           
           {/* שוליים */}
-          <div className="absolute right-16 top-0 bottom-0 w-px bg-red-300/40"></div>
-          <div className="absolute left-16 top-0 bottom-0 w-px bg-red-300/40"></div>
+          <div className="absolute right-8 sm:right-12 lg:right-16 top-0 bottom-0 w-px bg-red-300/40"></div>
+          <div className="absolute left-8 sm:left-12 lg:left-16 top-0 bottom-0 w-px bg-red-300/40"></div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* כותרת כמו כתב יד */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 relative"
+          className="text-center mb-12 sm:mb-14 lg:mb-16 relative"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-4 relative font-handwriting">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 relative font-handwriting">
             שיטות הלימוד שלי
             {/* קו תחתון בכתב יד */}
             <motion.div
@@ -116,7 +116,7 @@ const GridNotebookSection = () => {
         </motion.div>
 
         {/* כרטיסיות כמו פתקיות עם סלוטייפ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8">
           {methods.map((method, index) => (
             <motion.div
               key={index}
