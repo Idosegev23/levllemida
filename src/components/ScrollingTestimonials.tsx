@@ -33,12 +33,12 @@ const ScrollingTestimonials = () => {
         </motion.h2>
       </div>
 
-      {/* גלילה איטית שמאיצה */}
+      {/* גלילה בלופ אינסופי חלק */}
       <div className="relative">
         <motion.div 
           className="flex gap-6 will-change-transform"
           animate={{ 
-            x: [0, -2000],
+            x: [0, -3672], // 12 ביקורות * 306px (300px + 6px gap) = -3672px
           }}
           transition={{
             duration: 30,
@@ -50,7 +50,7 @@ const ScrollingTestimonials = () => {
             width: 'max-content',
           }}
         >
-          {/* חזרה על הביקורות פעמיים לחלקות */}
+          {/* חזרה על הביקורות פעמיים ללופ חלק ואינסופי */}
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <motion.div
               key={index}
