@@ -70,13 +70,13 @@ const Header = () => {
       <div className="container-center flex justify-between items-center py-4 relative z-10">
         {/* Logo */}
         <div className="w-24 md:w-36">
-          <Link href="/" className="block">
+          <Link href="/" className="block hover-effect group">
             <Image
               src="/logo.png"
               alt="לב ללמידה - לוגו"
               width={100}
               height={40}
-              className="h-auto w-full"
+              className="h-auto w-full transition-transform duration-300 group-hover:scale-105"
               priority
             />
           </Link>
@@ -133,10 +133,11 @@ const Header = () => {
               <li key={index} className="mb-3 md:mb-0 px-0 md:px-0 border-b border-gray-50 md:border-b-0 pb-3 md:pb-0 w-full md:w-auto">
                 <a
                   href={item.id ? `#${item.id}` : '/'}
-                  className="block text-gray-700 hover:text-primary transition-colors cursor-pointer text-base md:text-sm"
+                  className="block text-gray-700 hover:text-primary transition-all duration-300 cursor-pointer text-base md:text-sm hover-effect relative group"
                   onClick={(e) => item.id ? handleSmoothScroll(e, item.id) : null}
                 >
                   {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-highlight-yellow rounded-full transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </li>
             ))}
@@ -147,7 +148,7 @@ const Header = () => {
       {/* Floating WhatsApp Button */}
       <a
         href="tel:+9720000000000" // יש להחליף במספר הטלפון האמיתי
-        className="floating-whatsapp bg-primary text-white p-3 rounded-full"
+        className="floating-whatsapp bg-primary text-white p-3 rounded-full hover-effect glow-effect floating-animation"
         aria-label="התקשר עכשיו"
       >
         <HiOutlinePhone className="w-6 h-6" />
