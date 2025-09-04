@@ -74,7 +74,7 @@ const MagazineAboutSection = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-primary text-xl">💼</span>
+                    <div className="w-4 h-4 bg-primary/30 rounded-full"></div>
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-700 mb-2">העבר שלי</h4>
@@ -95,7 +95,7 @@ const MagazineAboutSection = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-highlight-yellow/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-highlight-yellow text-xl">⚡</span>
+                    <div className="w-4 h-4 bg-highlight-yellow/60 rounded-full"></div>
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-700 mb-2">הצעד האמיץ</h4>
@@ -118,7 +118,7 @@ const MagazineAboutSection = () => {
                 <div className="relative z-10">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-xl">💝</span>
+                      <div className="w-4 h-4 bg-white/60 rounded-full"></div>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2">החזון שלי</h4>
@@ -140,17 +140,16 @@ const MagazineAboutSection = () => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { icon: "🎯", text: "הוראה מתקנת", color: "bg-red-50 border-red-100" },
-                { icon: "🤖", text: "AI וטכנולוגיה", color: "bg-blue-50 border-blue-100" },
-                { icon: "💝", text: "מרחב בטוח", color: "bg-pink-50 border-pink-100" },
-                { icon: "🎨", text: "התאמה אישית", color: "bg-purple-50 border-purple-100" },
+                { text: "הוראה מתקנת", color: "bg-red-50 border-red-100" },
+                { text: "AI וטכנולוגיה", color: "bg-blue-50 border-blue-100" },
+                { text: "מרחב בטוח", color: "bg-pink-50 border-pink-100" },
+                { text: "התאמה אישית", color: "bg-purple-50 border-purple-100" },
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.02, y: -2 }}
                   className={`${item.color} p-4 rounded-2xl border text-center transition-all duration-200`}
                 >
-                  <div className="text-2xl mb-2">{item.icon}</div>
                   <div className="text-sm font-medium text-slate-700">{item.text}</div>
                 </motion.div>
               ))}
@@ -159,27 +158,6 @@ const MagazineAboutSection = () => {
           </div>
         </div>
 
-        {/* סטטיסטיקות במקום לא צפוי */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="mt-20 bg-white rounded-[40px] p-8 shadow-sm border border-gray-100"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "10+", label: "שנות ניסיון" },
-              { number: "200+", label: "תלמידים מרוצים" },
-              { number: "95%", label: "שיפור בציונים" },
-              { number: "♥", label: "למידה מהלב" },
-            ].map((stat, index) => (
-              <div key={index} className="space-y-2">
-                <div className="text-3xl font-black text-primary">{stat.number}</div>
-                <div className="text-sm text-slate-600 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
       </div>
     </section>

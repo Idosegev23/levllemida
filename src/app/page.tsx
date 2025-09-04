@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import UniqueHeroSection from '@/components/UniqueHeroSection';
 import MagazineAboutSection from '@/components/MagazineAboutSection';
-import NotebookTeachingSection from '@/components/NotebookTeachingSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import FaqSection from '@/components/FaqSection';
+import GridNotebookSection from '@/components/GridNotebookSection';
+import ScrollingTestimonials from '@/components/ScrollingTestimonials';
+import CreativeFaqSection from '@/components/CreativeFaqSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -20,9 +20,9 @@ export default function Home() {
       <main>
         <UniqueHeroSection />
         <MagazineAboutSection />
-        <NotebookTeachingSection />
-        <TestimonialsSection />
-        <FaqSection />
+        <GridNotebookSection />
+        <ScrollingTestimonials />
+        <CreativeFaqSection />
         <ContactSection />
       </main>
       <Footer />

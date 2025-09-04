@@ -1,11 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 
 const UniqueHeroSection = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const { scrollY } = useScroll();
+  
+  // פארלקס עדין ויוקרתי
+  const yTitle = useTransform(scrollY, [0, 500], [0, -100]);
+  const yDescription = useTransform(scrollY, [0, 500], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.7]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -31,7 +37,7 @@ const UniqueHeroSection = () => {
       
       {/* Layout שבור ולא שגרתי */}
       <div className="relative z-10 min-h-screen flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6 pt-24">
           
           {/* חלק עליון - כותרת בצד שמאל */}
           <div className="grid grid-cols-12 gap-8 items-center">
@@ -49,7 +55,10 @@ const UniqueHeroSection = () => {
                   1
                 </div>
                 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight text-slate-800 relative z-10">
+                <motion.h1 
+                  className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight text-slate-800 relative z-10"
+                  style={{ y: yTitle, opacity }}
+                >
                   <motion.span 
                     className="block"
                     initial={{ opacity: 0, y: 50 }}
@@ -66,7 +75,7 @@ const UniqueHeroSection = () => {
                   >
                     לומד אחרת
                   </motion.span>
-                </h1>
+                </motion.h1>
               </motion.div>
             </div>
 
@@ -80,7 +89,7 @@ const UniqueHeroSection = () => {
               >
                 <div className="w-64 h-64 bg-gradient-to-br from-highlight-yellow/20 to-primary/20 rounded-[60px] rotate-12 relative overflow-hidden">
                   <div className="absolute inset-4 bg-white rounded-[40px] flex items-center justify-center">
-                    <div className="text-6xl">💝</div>
+                    <div className="w-20 h-20 bg-primary/10 rounded-full"></div>
                   </div>
                 </div>
               </motion.div>
@@ -100,6 +109,7 @@ const UniqueHeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
                 className="relative"
+                style={{ y: yDescription }}
               >
                 {/* קו דקורטיבי */}
                 <div className="absolute -top-8 left-0 w-24 h-1 bg-primary rounded-full"></div>
@@ -129,7 +139,7 @@ const UniqueHeroSection = () => {
                 transition={{ delay: 1, duration: 1 }}
                 className="text-primary/10 text-[120px] font-black"
               >
-                ♥
+                ◆
               </motion.div>
             </div>
           </div>
@@ -167,7 +177,7 @@ const UniqueHeroSection = () => {
                       whileHover={{ x: 5, opacity: 1 }}
                       transition={{ duration: 0.2 }}
                     >
-                      ←
+                      ◄
                     </motion.div>
                   </motion.button>
                 </Link>
@@ -185,7 +195,7 @@ const UniqueHeroSection = () => {
                 <div className="flex items-center gap-3 text-slate-400">
                   <div className="w-8 h-px bg-slate-300"></div>
                   <span className="text-sm font-medium">
-                    שיעור ללא התחייבות ♥ 100% התאמה אישית
+                    שיעור ללא התחייבות • 100% התאמה אישית
                   </span>
                 </div>
               </motion.div>
